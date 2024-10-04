@@ -5,6 +5,7 @@
 bin/
 build/
 lib/
+Exports/
 
 # Godot-specific ignores
 .import/
