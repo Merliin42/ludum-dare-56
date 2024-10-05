@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://drmdcshkiihf3"]
+[gd_scene load_steps=6 format=3 uid="uid://drmdcshkiihf3"]
 
 [ext_resource type="PackedScene" uid="uid://cotgnp0pyr0uk" path="res://Mob/mob_spawner.tscn" id="1_5wj2p"]
+[ext_resource type="Script" path="res://main.gd" id="1_55rge"]
 [ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="1_nupqd"]
 [ext_resource type="PackedScene" uid="uid://bjkyon2pmjvc1" path="res://Character/character.tscn" id="1_qqap8"]
 [ext_resource type="PackedScene" uid="uid://b2e1yu83rq4jl" path="res://Mob/mob.tscn" id="2_a3thj"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_55rge")
 
 [node name="MobSpawner" parent="." instance=ExtResource("1_5wj2p")]
 mobs = Array[PackedScene]([ExtResource("2_a3thj")])
@@ -16,3 +18,5 @@ scale = Vector2(87.625, 87.625)
 texture = ExtResource("1_nupqd")
 
 [node name="Character" parent="." instance=ExtResource("1_qqap8")]
+
+[connection signal="died" from="Character" to="." method="_on_character_died"]

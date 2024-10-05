@@ -1,6 +1,7 @@
 extends CharacterBody2D;
 
 signal health_updated(new_health);
+signal died();
 
 @export var speed = 200;
 @export var max_health = 100;
@@ -30,10 +31,13 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == 'take_damage':
 		i_frame = false;
 
-func _on_mob_detector_body_entered(body:Node2D) -> void:
+func _on_mob_detector_body_entered(body: Node2D) -> void:
 	if is_instance_of(body, Mob):
 		take_damage(body.damages);
 
 
 func _on_health_updated(new_health: Variant) -> void:
 	$HealthBar.value = health * 100. / max_health;
+
+	if health <= 0:
+		emit_signal('died');
