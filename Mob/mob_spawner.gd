@@ -2,7 +2,7 @@ extends Path2D
 
 @export var mobs: Array[PackedScene];
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	position = get_viewport().get_camera_2d().position;
 
 func _on_timer_timeout() -> void:

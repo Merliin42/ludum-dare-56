@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2e1yu83rq4jl"]
+
+[ext_resource type="Script" path="res://Mob/mob.gd" id="1_0rrqq"]
+[ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="1_d0aug"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wpxjb"]
+radius = 32.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bdtav"]
+radius = 32.0
+
+[sub_resource type="Animation" id="Animation_s8oox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6um1r"]
+resource_name = "take_damage"
+length = 0.14
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.709804, 0.576471, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jaj34"]
+_data = {
+"RESET": SubResource("Animation_s8oox"),
+"take_damage": SubResource("Animation_6um1r")
+}
+
+[node name="Mob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_0rrqq")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d0aug")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wpxjb")
+
+[node name="DamageDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageDetector"]
+shape = SubResource("CircleShape2D_bdtav")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jaj34")
+}
+
+[connection signal="area_entered" from="DamageDetector" to="." method="_on_damage_detector_area_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
