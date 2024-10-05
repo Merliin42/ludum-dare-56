@@ -1,6 +1,7 @@
 extends CharacterBody2D;
 
 signal health_updated(new_health);
+signal xp_obtained(amount);
 signal died();
 
 @export var speed = 200;
@@ -9,6 +10,7 @@ signal died();
 
 @onready var health = max_health;
 var i_frame := false;
+
 
 func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, 0);
@@ -41,3 +43,7 @@ func _on_health_updated(new_health: Variant) -> void:
 
 	if health <= 0:
 		emit_signal('died');
+
+
+func _on_collectible_detector_area_entered(area:Area2D) -> void:
+	emit_signal('xp_obtained', 1);

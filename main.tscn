@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://drmdcshkiihf3"]
+[gd_scene load_steps=8 format=3 uid="uid://drmdcshkiihf3"]
 
 [ext_resource type="PackedScene" uid="uid://cotgnp0pyr0uk" path="res://Mob/mob_spawner.tscn" id="1_5wj2p"]
 [ext_resource type="Script" path="res://main.gd" id="1_55rge"]
@@ -6,8 +6,33 @@
 [ext_resource type="PackedScene" uid="uid://bjkyon2pmjvc1" path="res://Character/character.tscn" id="1_qqap8"]
 [ext_resource type="PackedScene" uid="uid://b2e1yu83rq4jl" path="res://Mob/mob.tscn" id="2_a3thj"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqqqs"]
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5roxr"]
+bg_color = Color(0.635294, 0.647059, 0.85098, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
 [node name="Main" type="Node"]
 script = ExtResource("1_55rge")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="XPBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_oqqqs")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5roxr")
+show_percentage = false
 
 [node name="MobSpawner" parent="." instance=ExtResource("1_5wj2p")]
 mobs = Array[PackedScene]([ExtResource("2_a3thj")])
@@ -20,3 +45,4 @@ texture = ExtResource("1_nupqd")
 [node name="Character" parent="." instance=ExtResource("1_qqap8")]
 
 [connection signal="died" from="Character" to="." method="_on_character_died"]
+[connection signal="xp_obtained" from="Character" to="." method="_on_character_xp_obtained"]

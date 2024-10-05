@@ -80,6 +80,7 @@ monitorable = false
 shape = SubResource("CircleShape2D_0suh2")
 
 [node name="CollectibleDetector" type="Area2D" parent="."]
+collision_layer = 0
 collision_mask = 4
 monitorable = false
 
@@ -104,4 +105,5 @@ show_percentage = false
 
 [connection signal="health_updated" from="." to="." method="_on_health_updated"]
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
+[connection signal="area_entered" from="CollectibleDetector" to="." method="_on_collectible_detector_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
