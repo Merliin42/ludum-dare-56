@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw476kgr0kaq4"]
+
+[ext_resource type="Script" path="res://GUI/level_up_menu.gd" id="1_pn6ki"]
+
+[node name="LevelUpMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_pn6ki")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.5
+offset_top = -100.0
+offset_right = 175.5
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
