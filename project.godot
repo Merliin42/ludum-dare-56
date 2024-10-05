@@ -59,6 +59,10 @@ character_down={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_5="mur"
+
 [physics]
 
 common/enable_pause_aware_picking=true
