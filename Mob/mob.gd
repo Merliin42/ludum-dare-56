@@ -1,11 +1,13 @@
 class_name Mob;
 extends CharacterBody2D;
 
-signal damage_taken(new_health);
+signal health_updated(new_health);
 
 @export var speed := 100;
-@export var health := 10;
+@export var max_health := 10;
 @export var damages := 10;
+
+@onready var health := max_health;
 
 func _process(delta: float) -> void:
 	var camera = get_viewport().get_camera_2d()
@@ -18,8 +20,14 @@ func _process(delta: float) -> void:
 func take_damage(amount: int) -> void:
 	$AnimationPlayer.play('take_damage');
 	health -= amount;
-	emit_signal('damage_taken', health);
+	emit_signal('health_updated', health);
 
 func _on_damage_detector_area_entered(area: Area2D) -> void:
 	if is_instance_of(area, Attack):
 		take_damage(area.damages);
+
+	
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == 'take_damage':
+		if health <= 0 :
+			queue_free();
