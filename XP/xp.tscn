@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b86fc5e2ikdc4"]
+
+[ext_resource type="Script" path="res://XP/xp.gd" id="1_2ae3j"]
+[ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="1_h2ija"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k4cxn"]
+radius = 8.0
+
+[node name="XP" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_2ae3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_h2ija")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k4cxn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
