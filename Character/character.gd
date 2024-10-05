@@ -4,15 +4,15 @@ signal health_updated(new_health);
 signal xp_obtained(amount);
 signal died();
 
-@export var speed = 200;
-@export var max_health = 100;
+@export var speed := 200;
+@export var max_health := 100;
 @export var i_frame_enable := false;
 
-@onready var health = max_health;
+@onready var health := max_health;
 var i_frame := false;
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity = Vector2(0, 0);
 	velocity.x = Input.get_axis('character_left', 'character_right');
 	velocity.y = Input.get_axis('character_up', 'character_down');
@@ -27,7 +27,7 @@ func take_damage(amount: int) -> void:
 	i_frame = true;
 	$AnimationPlayer.play('take_damage');
 	health -= amount;
-	emit_signal('health_updated', health);
+	health_updated.emit(health);
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == 'take_damage':
@@ -39,11 +39,11 @@ func _on_mob_detector_body_entered(body: Node2D) -> void:
 
 
 func _on_health_updated(new_health: Variant) -> void:
-	$HealthBar.value = health * 100. / max_health;
+	$HealthBar.value = new_health * 100. / max_health;
 
 	if health <= 0:
-		emit_signal('died');
+		died.emit();
 
 
-func _on_collectible_detector_area_entered(area:Area2D) -> void:
-	emit_signal('xp_obtained', 1);
+func _on_collectible_detector_area_entered(_area:Area2D) -> void:
+	xp_obtained.emit(1);

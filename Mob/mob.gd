@@ -11,7 +11,7 @@ signal health_updated(new_health);
 
 var xp := preload('res://XP/xp.tscn');
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var camera = get_viewport().get_camera_2d()
 
 	if camera:
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 func take_damage(amount: int) -> void:
 	$AnimationPlayer.play('take_damage');
 	health -= amount;
-	emit_signal('health_updated', health);
+	health_updated.emit(health);
 
 func _on_damage_detector_area_entered(area: Area2D) -> void:
 	if is_instance_of(area, Attack):
