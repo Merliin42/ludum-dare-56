@@ -1,11 +1,12 @@
 extends CharacterBody2D;
 
-signal damage_taken(new_health);
+signal health_updated(new_health);
 
 @export var speed = 200;
-@export var health = 10;
+@export var max_health = 10;
 @export var i_frame_enable := false;
 
+@onready var health = max_health;
 var i_frame := false;
 
 func _physics_process(delta: float) -> void:
@@ -23,12 +24,12 @@ func take_damage(amount: int) -> void:
 	i_frame = true;
 	$AnimationPlayer.play('take_damage');
 	health -= amount;
-	emit_signal('damage_taken', health);
+	emit_signal('health_updated', health);
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == 'take_damage':
 		i_frame = false;
 
 func _on_mob_detector_body_entered(body:Node2D) -> void:
-	if is_instance_of(body, Enemy):
+	if is_instance_of(body, Mob):
 		take_damage(body.damages);

@@ -1,4 +1,5 @@
-extends Area2D 
+class_name Mob;
+extends CharacterBody2D;
 
 signal damage_taken(new_health);
 
@@ -10,9 +11,9 @@ func _process(delta: float) -> void:
 	var camera = get_viewport().get_camera_2d()
 
 	if camera:
-		var center_ajusted = camera.global_position 
-		position = position.move_toward(center_ajusted, delta * speed);
-		$Line2D.points[1].position = center_ajusted;
+		velocity = camera.global_position - self.global_position;
+		velocity = velocity.normalized() * speed;
+		move_and_slide();
 
 func take_damage(amount: int) -> void:
 	$AnimationPlayer.play('take_damage');

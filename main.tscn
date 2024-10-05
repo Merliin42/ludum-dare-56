@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://drmdcshkiihf3"]
 
-[ext_resource type="PackedScene" uid="uid://cotgnp0pyr0uk" path="res://Enemy/mob_spawner.tscn" id="1_5wj2p"]
+[ext_resource type="PackedScene" uid="uid://cotgnp0pyr0uk" path="res://Mob/mob_spawner.tscn" id="1_5wj2p"]
 [ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="1_nupqd"]
 [ext_resource type="PackedScene" uid="uid://bjkyon2pmjvc1" path="res://Character/character.tscn" id="1_qqap8"]
-[ext_resource type="PackedScene" uid="uid://b2e1yu83rq4jl" path="res://Enemy/enemy.tscn" id="2_a3thj"]
+[ext_resource type="PackedScene" uid="uid://b2e1yu83rq4jl" path="res://Mob/mob.tscn" id="2_a3thj"]
 
 [node name="Main" type="Node"]
 
