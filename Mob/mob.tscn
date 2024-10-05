@@ -21,7 +21,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 0.709804, 0.576471, 1)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_6um1r"]
@@ -46,8 +46,7 @@ _data = {
 "take_damage": SubResource("Animation_6um1r")
 }
 
-[node name="Enemy" type="CharacterBody2D"]
-modulate = Color(1, 0.709804, 0.576471, 1)
+[node name="Mob" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_0rrqq")
