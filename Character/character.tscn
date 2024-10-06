@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjkyon2pmjvc1"]
+[gd_scene load_steps=19 format=3 uid="uid://bjkyon2pmjvc1"]
 
 [ext_resource type="Script" path="res://Character/character.gd" id="1_fn5m8"]
 [ext_resource type="Texture2D" uid="uid://b2g8dn0ejgyr0" path="res://Character/assets/animation/Papa_Taupe-1.png" id="2_m733v"]
@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://dm2sreb0b7vtu" path="res://Character/assets/animation/Papa_Taupe-3.png" id="4_4ue27"]
 [ext_resource type="AudioStream" uid="uid://bbovt7tfoa260" path="res://Character/assets/Bruitages - coup_3.mp3" id="4_nbbdi"]
 [ext_resource type="Texture2D" uid="uid://dfxjk6xs8o1up" path="res://Character/assets/animation/Papa_Taupe-4.png" id="5_tmiww"]
+[ext_resource type="Texture2D" uid="uid://tp6e6l4pprtm" path="res://Character/assets/healthbar/Intérieur.png" id="6_n0hie"]
+[ext_resource type="Texture2D" uid="uid://x4qjc35rk6fh" path="res://Character/assets/healthbar/Jauche-1.png" id="7_srreq"]
+[ext_resource type="Texture2D" uid="uid://5qsdosfvpt5b" path="res://Character/assets/healthbar/Jauche-2.png" id="8_vyukr"]
+[ext_resource type="Texture2D" uid="uid://7av7awve2ei7" path="res://Character/assets/healthbar/Jauche-3.png" id="9_ghw0t"]
+[ext_resource type="Texture2D" uid="uid://cggrueai0qoal" path="res://Character/assets/healthbar/Amour.png" id="10_pk1t6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blfja"]
 animations = [{
@@ -68,12 +73,14 @@ _data = {
 "take_damage": SubResource("Animation_8os4l")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxv1b"]
-bg_color = Color(1, 0.188235, 0, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2oow6"]
+frames = 3
+speed_scale = 8.0
+frame_0/texture = ExtResource("7_srreq")
+frame_1/texture = ExtResource("8_vyukr")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("9_ghw0t")
+frame_2/duration = 1.0
 
 [node name="Character" type="CharacterBody2D"]
 z_index = 1
@@ -82,7 +89,6 @@ collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_fn5m8")
 speed = 300
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
@@ -116,14 +122,25 @@ libraries = {
 "": SubResource("AnimationLibrary_d3fd6")
 }
 
-[node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = -32.0
-offset_top = 85.0
-offset_right = 32.0
-offset_bottom = 93.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_vxv1b")
-value = 100.0
-show_percentage = false
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = 61.0
+offset_right = 305.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_under = ExtResource("6_n0hie")
+texture_over = SubResource("AnimatedTexture_2oow6")
+texture_progress = ExtResource("10_pk1t6")
+metadata/_edit_use_anchors_ = true
 
 [node name="Punch" parent="." instance=ExtResource("3_2ehei")]
 position = Vector2(24, -3)

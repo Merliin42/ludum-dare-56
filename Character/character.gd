@@ -45,7 +45,7 @@ func _on_mob_detector_body_entered(body: Node2D) -> void:
 
 
 func _on_health_updated(new_health: Variant) -> void:
-	$HealthBar.value = new_health * 100. / max_health;
+	$HealthBar.value = 100 - (new_health * 100. / max_health);
 
 	if health <= 0:
 		died.emit();

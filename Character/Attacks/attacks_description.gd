@@ -34,7 +34,7 @@ var attacks_description: Array = [
 	{
 		'id' = 'showtime',
 		'title' = 'Showtime!',
-		'description' = 'Inland Empire : Disco never dies baby',
+		'description' = 'Inland Empire : Show them your vast, oceanic soul',
 		'icon' = 'res://icon.png',
 	},
 	{
