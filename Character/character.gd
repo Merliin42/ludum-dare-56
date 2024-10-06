@@ -19,6 +19,11 @@ func _physics_process(_delta: float) -> void:
 	velocity = velocity.normalized();
 	velocity *= speed;
 
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = false;
+	elif velocity.x > 0:
+		$AnimatedSprite2D.flip_h = true;
+
 	move_and_slide()
 
 func take_damage(amount: int) -> void:
@@ -46,7 +51,7 @@ func _on_health_updated(new_health: Variant) -> void:
 		died.emit();
 
 
-func _on_collectible_detector_area_entered(_area:Area2D) -> void:
+func _on_collectible_detector_area_entered(_area: Area2D) -> void:
 	$Timer.start();
 
 

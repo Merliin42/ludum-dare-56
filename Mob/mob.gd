@@ -11,13 +11,16 @@ signal health_updated(new_health);
 
 var xp := preload('res://XP/xp.tscn');
 
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var camera = get_viewport().get_camera_2d()
 
 	if camera:
 		velocity = camera.global_position - self.global_position;
 		velocity = velocity.normalized() * speed;
 		move_and_slide();
+	
+	var angle = velocity.angle_to(Vector2(1, 1));
+	$AnimatedSprite2D.rotation = -angle;
 
 func take_damage(amount: int) -> void:
 	$DamagePlayer.play();
@@ -32,8 +35,8 @@ func _on_damage_detector_area_entered(area: Area2D) -> void:
 	
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == 'take_damage':
-		if health <= 0 :
+		if health <= 0:
 			var xp_instance = xp.instantiate();
 			xp_instance.position = self.position;
-			get_parent().add_child(xp_instance);		
+			get_parent().add_child(xp_instance);
 			queue_free();
