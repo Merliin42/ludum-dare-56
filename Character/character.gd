@@ -22,6 +22,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func take_damage(amount: int) -> void:
+	$DamagePlayer.play();
 	if i_frame && i_frame_enable:
 		return ;
 	i_frame = true;
@@ -46,4 +47,8 @@ func _on_health_updated(new_health: Variant) -> void:
 
 
 func _on_collectible_detector_area_entered(_area:Area2D) -> void:
+	$Timer.start();
+
+
+func _on_timer_timeout() -> void:
 	xp_obtained.emit(1);

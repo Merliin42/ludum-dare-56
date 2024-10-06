@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjkyon2pmjvc1"]
+[gd_scene load_steps=10 format=3 uid="uid://bjkyon2pmjvc1"]
 
 [ext_resource type="Script" path="res://Character/character.gd" id="1_fn5m8"]
 [ext_resource type="Texture2D" uid="uid://dwwskusrwwa1n" path="res://Character/Papa_Taupe.png" id="2_y4qqf"]
+[ext_resource type="PackedScene" uid="uid://boroei22ds22n" path="res://Character/Attacks/punch.tscn" id="3_2ehei"]
+[ext_resource type="AudioStream" uid="uid://bbovt7tfoa260" path="res://Character/assets/Bruitages - coup_3.mp3" id="4_nbbdi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0suh2"]
 radius = 48.0937
@@ -98,7 +100,17 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_vxv1b")
 value = 100.0
 show_percentage = false
 
+[node name="Punch" parent="." instance=ExtResource("3_2ehei")]
+position = Vector2(24, -3)
+
+[node name="DamagePlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nbbdi")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+
 [connection signal="health_updated" from="." to="." method="_on_health_updated"]
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
 [connection signal="area_entered" from="CollectibleDetector" to="." method="_on_collectible_detector_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

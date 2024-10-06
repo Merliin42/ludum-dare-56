@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2e1yu83rq4jl"]
+[gd_scene load_steps=9 format=3 uid="uid://b2e1yu83rq4jl"]
 
 [ext_resource type="Script" path="res://Mob/mob.gd" id="1_0rrqq"]
 [ext_resource type="Texture2D" uid="uid://vbncxwsv7h48" path="res://Mob/Bebe_Taupe.png" id="2_oel3j"]
+[ext_resource type="AudioStream" uid="uid://cgma3fdsstoa6" path="res://Mob/assets/brt - toucher ennemi.R.wav" id="3_k5t53"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wpxjb"]
 radius = 24.0
@@ -71,6 +72,10 @@ shape = SubResource("CircleShape2D_bdtav")
 libraries = {
 "": SubResource("AnimationLibrary_jaj34")
 }
+
+[node name="DamagePlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_k5t53")
+volume_db = 10.0
 
 [connection signal="area_entered" from="DamageDetector" to="." method="_on_damage_detector_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

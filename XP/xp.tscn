@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b86fc5e2ikdc4"]
+[gd_scene load_steps=5 format=3 uid="uid://b86fc5e2ikdc4"]
 
 [ext_resource type="Script" path="res://XP/xp.gd" id="1_2ae3j"]
 [ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="1_h2ija"]
+[ext_resource type="AudioStream" uid="uid://bevnji2nquvm" path="res://XP/Bruitages - coeur.mp3" id="3_fiasn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k4cxn"]
 radius = 8.0
@@ -17,8 +18,8 @@ texture = ExtResource("1_h2ija")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_k4cxn")
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
+[node name="CollectedPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fiasn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="CollectedPlayer" to="." method="_on_collected_player_finished"]

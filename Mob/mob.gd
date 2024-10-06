@@ -20,6 +20,7 @@ func _process(_delta: float) -> void:
 		move_and_slide();
 
 func take_damage(amount: int) -> void:
+	$DamagePlayer.play();
 	$AnimationPlayer.play('take_damage');
 	health -= amount;
 	health_updated.emit(health);
