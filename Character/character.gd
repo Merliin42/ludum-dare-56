@@ -29,15 +29,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		$AnimatedSprite2D.play('default');
 	
-	get_closest_mob_position();
-
 	move_and_slide()
-
-func get_closest_mob_position() -> Vector2:
-	var closest_mob_detector = get_node('ClosestMobDetector');
-	if is_instance_of(closest_mob_detector, ClosestMobDetector):
-		return $ClosestMobDetector.get_closest_mob_position();
-	return Vector2.ZERO;
 
 func take_damage(amount: int) -> void:
 	$DamagePlayer.play();

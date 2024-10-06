@@ -10,6 +10,7 @@ signal health_updated(new_health);
 @onready var health := max_health;
 
 var xp := preload('res://XP/xp.tscn');
+var dead := false;
 
 func _physics_process(_delta: float) -> void:
 	var camera = get_viewport().get_camera_2d()
@@ -36,7 +37,14 @@ func _on_damage_detector_area_entered(area: Area2D) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == 'take_damage':
 		if health <= 0:
-			var xp_instance = xp.instantiate();
-			xp_instance.position = self.position;
-			get_parent().add_child(xp_instance);
-			queue_free();
+			dead = true;
+			$AnimatedSprite2D.play('explosion');
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if dead :
+		var xp_instance = xp.instantiate();
+		xp_instance.position = self.position;
+		get_parent().add_child(xp_instance);
+		queue_free();
+
+

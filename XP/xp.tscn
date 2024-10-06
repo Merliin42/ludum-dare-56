@@ -1,25 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://b86fc5e2ikdc4"]
+[gd_scene load_steps=8 format=3 uid="uid://b86fc5e2ikdc4"]
 
 [ext_resource type="Script" path="res://XP/xp.gd" id="1_2ae3j"]
-[ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="1_h2ija"]
+[ext_resource type="Texture2D" uid="uid://bbbmbri4stdrd" path="res://XP/assets/Petit_Cœur_-1.png" id="3_a7nqj"]
 [ext_resource type="AudioStream" uid="uid://bevnji2nquvm" path="res://XP/Bruitages - coeur.mp3" id="3_fiasn"]
+[ext_resource type="Texture2D" uid="uid://0fjwkb5c7gwh" path="res://XP/assets/Petit_Cœur_-2.png" id="4_f6pcs"]
+[ext_resource type="Texture2D" uid="uid://c4hbeubjvwk4r" path="res://XP/assets/Petit_Cœur_-3.png" id="5_sgope"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x7vkw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a7nqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f6pcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sgope")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k4cxn"]
-radius = 8.0
 
 [node name="XP" type="Area2D"]
+z_index = -1
 collision_layer = 4
 script = ExtResource("1_2ae3j")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CollectedPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_fiasn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 3)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_h2ija")
+sprite_frames = SubResource("SpriteFrames_x7vkw")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_k4cxn")
-
-[node name="CollectedPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_fiasn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="CollectedPlayer" to="." method="_on_collected_player_finished"]
