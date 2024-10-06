@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=4 uid="uid://7qmj2aotn7oi"]
 
-[ext_resource type="Texture2D" uid="uid://d0q2aapqpg7t0" path="res://Tilemap/TILESET V2.png" id="1_faeet"]
+[ext_resource type="Texture2D" uid="uid://j3yh86wfoaoy" path="res://Tilemap/TILESET V3.png" id="1_4r21a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u286u"]
-texture = ExtResource("1_faeet")
+texture = ExtResource("1_4r21a")
 separation = Vector2i(10, 10)
 texture_region_size = Vector2i(125, 125)
 2:1/0 = 0
