@@ -42,7 +42,6 @@ show_percentage = false
 process_mode = 1
 
 [node name="TileMapLayer" parent="World" instance=ExtResource("4_f404e")]
-visible = false
 
 [node name="MobSpawner" parent="World" instance=ExtResource("1_5wj2p")]
 mobs = Array[PackedScene]([ExtResource("2_a3thj")])

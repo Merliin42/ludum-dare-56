@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://boroei22ds22n"]
 
-[ext_resource type="Script" path="res://Character/Attacks/punch.gd" id="1_gxs0n"]
+[ext_resource type="Script" path="res://Character/Attacks/punch/punch.gd" id="1_gxs0n"]
 [ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="2_8m6ll"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcxfm"]
