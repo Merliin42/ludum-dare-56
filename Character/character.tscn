@@ -1,9 +1,32 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjkyon2pmjvc1"]
+[gd_scene load_steps=14 format=3 uid="uid://bjkyon2pmjvc1"]
 
 [ext_resource type="Script" path="res://Character/character.gd" id="1_fn5m8"]
-[ext_resource type="Texture2D" uid="uid://dwwskusrwwa1n" path="res://Character/Papa_Taupe.png" id="2_y4qqf"]
+[ext_resource type="Texture2D" uid="uid://b2g8dn0ejgyr0" path="res://Character/assets/animation/Papa_Taupe-1.png" id="2_m733v"]
 [ext_resource type="PackedScene" uid="uid://boroei22ds22n" path="res://Character/Attacks/punch.tscn" id="3_2ehei"]
+[ext_resource type="Texture2D" uid="uid://dxpn5kv4t7x21" path="res://Character/assets/animation/Papa_Taupe-2.png" id="3_rmxf1"]
+[ext_resource type="Texture2D" uid="uid://dm2sreb0b7vtu" path="res://Character/assets/animation/Papa_Taupe-3.png" id="4_4ue27"]
 [ext_resource type="AudioStream" uid="uid://bbovt7tfoa260" path="res://Character/assets/Bruitages - coup_3.mp3" id="4_nbbdi"]
+[ext_resource type="Texture2D" uid="uid://dfxjk6xs8o1up" path="res://Character/assets/animation/Papa_Taupe-4.png" id="5_tmiww"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_blfja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m733v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rmxf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4ue27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tmiww")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0suh2"]
 radius = 48.0937
@@ -61,9 +84,11 @@ script = ExtResource("1_fn5m8")
 speed = 300
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_y4qqf")
+sprite_frames = SubResource("SpriteFrames_blfja")
+autoplay = "default"
+frame_progress = 0.433482
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0suh2")

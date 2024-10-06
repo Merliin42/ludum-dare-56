@@ -1,8 +1,35 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2e1yu83rq4jl"]
+[gd_scene load_steps=14 format=3 uid="uid://b2e1yu83rq4jl"]
 
 [ext_resource type="Script" path="res://Mob/mob.gd" id="1_0rrqq"]
-[ext_resource type="Texture2D" uid="uid://vbncxwsv7h48" path="res://Mob/Bebe_Taupe.png" id="2_oel3j"]
+[ext_resource type="Texture2D" uid="uid://bn8c4vbefi47l" path="res://Mob/assets/animation/Bébé_Taupe-1.png" id="2_pcoqj"]
 [ext_resource type="AudioStream" uid="uid://cgma3fdsstoa6" path="res://Mob/assets/brt - toucher ennemi.R.wav" id="3_k5t53"]
+[ext_resource type="Texture2D" uid="uid://cltin7eeirjp6" path="res://Mob/assets/animation/Bébé_Taupe-2.png" id="3_s72qh"]
+[ext_resource type="Texture2D" uid="uid://y2y4q0y2snim" path="res://Mob/assets/animation/Bébé_Taupe-3.png" id="4_0sjm3"]
+[ext_resource type="Texture2D" uid="uid://dwha66asnvp31" path="res://Mob/assets/animation/Bébé_Taupe-4.png" id="5_tgsgf"]
+[ext_resource type="Texture2D" uid="uid://b4aikuh1b0tpf" path="res://Mob/assets/animation/Bébé_Taupe-5.png" id="6_pte6f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65ryl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pcoqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s72qh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0sjm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tgsgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pte6f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wpxjb"]
 radius = 24.0
@@ -53,10 +80,12 @@ collision_mask = 3
 script = ExtResource("1_0rrqq")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8, 8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_oel3j")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 6)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_65ryl")
+autoplay = "default"
+frame_progress = 0.646504
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wpxjb")
