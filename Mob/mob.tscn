@@ -1,13 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://b2e1yu83rq4jl"]
 
 [ext_resource type="Script" path="res://Mob/mob.gd" id="1_0rrqq"]
-[ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="1_d0aug"]
+[ext_resource type="Texture2D" uid="uid://vbncxwsv7h48" path="res://Mob/Bebe_Taupe.png" id="2_oel3j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wpxjb"]
-radius = 32.0
+radius = 24.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bdtav"]
-radius = 32.0
+radius = 24.0
 
 [sub_resource type="Animation" id="Animation_s8oox"]
 length = 0.001
@@ -53,7 +53,9 @@ script = ExtResource("1_0rrqq")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_d0aug")
+position = Vector2(8, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_oel3j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wpxjb")

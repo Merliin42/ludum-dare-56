@@ -1,14 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjkyon2pmjvc1"]
+[gd_scene load_steps=8 format=3 uid="uid://bjkyon2pmjvc1"]
 
 [ext_resource type="Script" path="res://Character/character.gd" id="1_fn5m8"]
-[ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="1_lbhys"]
-[ext_resource type="PackedScene" uid="uid://boroei22ds22n" path="res://Character/Attacks/punch.tscn" id="3_2ehei"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_deqyi"]
-radius = 32.0
+[ext_resource type="Texture2D" uid="uid://dwwskusrwwa1n" path="res://Character/Papa_Taupe.png" id="2_y4qqf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0suh2"]
-radius = 32.3883
+radius = 48.0937
 
 [sub_resource type="Animation" id="Animation_oj0h8"]
 length = 0.001
@@ -63,11 +59,12 @@ script = ExtResource("1_fn5m8")
 speed = 300
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_deqyi")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_lbhys")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_y4qqf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0suh2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -94,14 +91,12 @@ libraries = {
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -32.0
-offset_top = 37.0
+offset_top = 85.0
 offset_right = 32.0
-offset_bottom = 45.0
+offset_bottom = 93.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_vxv1b")
 value = 100.0
 show_percentage = false
-
-[node name="Punch" parent="." instance=ExtResource("3_2ehei")]
 
 [connection signal="health_updated" from="." to="." method="_on_health_updated"]
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
