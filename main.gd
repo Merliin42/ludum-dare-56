@@ -2,7 +2,7 @@ extends Node
 
 var level_up_menu := preload('res://GUI/level_up_menu.tscn');
 var player_xp = 0;
-var next_level = 1;
+var next_level = 10;
 
 func _on_character_died() -> void:
 	get_tree().quit();
