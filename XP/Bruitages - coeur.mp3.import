@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bevnji2nquvm"
+path="res://.godot/imported/Bruitages - coeur.mp3-95684d1d28b9b70dad80df38b2ff45f1.mp3str"
+
+[deps]
+
+source_file="res://XP/Bruitages - coeur.mp3"
+dest_files=["res://.godot/imported/Bruitages - coeur.mp3-95684d1d28b9b70dad80df38b2ff45f1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

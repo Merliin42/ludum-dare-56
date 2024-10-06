@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://drmdcshkiihf3"]
+[gd_scene load_steps=9 format=3 uid="uid://drmdcshkiihf3"]
 
 [ext_resource type="PackedScene" uid="uid://cotgnp0pyr0uk" path="res://Mob/mob_spawner.tscn" id="1_5wj2p"]
 [ext_resource type="Script" path="res://main.gd" id="1_55rge"]
 [ext_resource type="PackedScene" uid="uid://bjkyon2pmjvc1" path="res://Character/character.tscn" id="1_qqap8"]
 [ext_resource type="PackedScene" uid="uid://b2e1yu83rq4jl" path="res://Mob/mob.tscn" id="2_a3thj"]
+[ext_resource type="PackedScene" uid="uid://0jrnay5mg1jq" path="res://music/music.tscn" id="2_ixqty"]
 [ext_resource type="PackedScene" uid="uid://7qmj2aotn7oi" path="res://Tilemap/Tilemap.tscn" id="4_f404e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqqqs"]
@@ -22,6 +23,8 @@ corner_radius_bottom_left = 12
 [node name="Main" type="Node"]
 process_mode = 3
 script = ExtResource("1_55rge")
+
+[node name="Music" parent="." instance=ExtResource("2_ixqty")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

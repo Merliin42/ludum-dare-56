@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://0jrnay5mg1jq"]
+
+[ext_resource type="Script" path="res://music/music.gd" id="1_5n6uq"]
+[ext_resource type="AudioStream" uid="uid://c4n4kcpjja1q7" path="res://music/Musique V0 - Boucle début.mp3" id="1_lvsxs"]
+[ext_resource type="AudioStream" uid="uid://bsoxhw4e0mb46" path="res://music/Musique V0 - Boucle ZINZIN.mp3" id="2_8i78s"]
+
+[node name="Music" type="Node"]
+script = ExtResource("1_5n6uq")
+
+[node name="MusicStart" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_lvsxs")
+autoplay = true
+
+[node name="MusicZinzin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_8i78s")
+
+[connection signal="finished" from="MusicStart" to="." method="_on_music_start_finished"]
