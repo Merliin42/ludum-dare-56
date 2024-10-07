@@ -10,7 +10,8 @@ var next_level = 5;
 var elapsed_seconds = 0;
 
 func _on_character_died() -> void:
-	get_tree().change_scene_to_file('res://launchscreen/lanchscreen.tscn');
+	GlobalVariables.elapsed_seconds = elapsed_seconds;
+	get_tree().change_scene_to_file('res://scorescreen/score_screen.tscn');
 
 func _on_character_xp_obtained(amount: Variant) -> void:
 	player_xp += amount;
@@ -33,7 +34,7 @@ func _on_timer_timeout() -> void:
 
 func get_time_display(seconds_passed: int) -> String:
 	var seconds = seconds_passed % 60;
-	var minutes : int = elapsed_seconds / 60;
+	var minutes : int = seconds_passed / 60;
 
 	var str_seconds = str(seconds);
 	if(seconds <= 9):

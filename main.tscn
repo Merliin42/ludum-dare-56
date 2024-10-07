@@ -23,6 +23,7 @@ corner_radius_bottom_left = 12
 [node name="Main" type="Node"]
 process_mode = 3
 script = ExtResource("1_55rge")
+level_up_enabled = null
 
 [node name="Music" parent="." instance=ExtResource("2_ixqty")]
 
@@ -43,6 +44,7 @@ offset_left = 14.0
 offset_top = 38.0
 offset_right = 54.0
 offset_bottom = 59.0
+theme_override_colors/font_color = Color(0.984314, 0.929412, 0.831373, 1)
 theme_override_font_sizes/font_size = 60
 text = "00:00"
 metadata/_edit_use_anchors_ = true

@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.3")
 boot_splash/image="res://launchscreen/assets/Accueil_.png"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalVariables="*res://global_variables.gd"
+
 [display]
 
 window/size/viewport_width=1920

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ce5u5xnivlalg"]
+[gd_scene load_steps=17 format=3 uid="uid://ce5u5xnivlalg"]
 
 [ext_resource type="Script" path="res://Attacks/haribomb/haribomb.gd" id="1_rw4tg"]
 [ext_resource type="Texture2D" uid="uid://dhwg54ex8ajjd" path="res://Attacks/haribomb/assets/Haribombe/Haribombe-1.png" id="2_3rj15"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bcffgcy0upexo" path="res://Attacks/haribomb/assets/Explosion/Explosion_Haribo-4.png" id="8_pav7a"]
 [ext_resource type="Texture2D" uid="uid://dpdpxvsspqgws" path="res://Attacks/haribomb/assets/Explosion/Explosion_Haribo-5.png" id="9_ry7ng"]
 [ext_resource type="Texture2D" uid="uid://byum6ep1y4jr3" path="res://Attacks/haribomb/assets/Explosion/Explosion_Haribo-6.png" id="10_egw1b"]
+[ext_resource type="AudioStream" uid="uid://d46j2uawa0p4" path="res://Attacks/haribomb/BRT - haribombe.mp3" id="11_u3m31"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ratje"]
 animations = [{
@@ -117,6 +118,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [&"explosion"]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_amnvr"]
 resource_name = "launch"
@@ -182,6 +195,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [&"default", &"explosion"]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.69),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ht4k"]
 _data = {
@@ -216,6 +241,9 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_u3m31")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

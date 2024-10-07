@@ -10,9 +10,12 @@ signal died();
 
 @onready var health := max_health;
 var i_frame := false;
+var dead := false;
 
 
 func _physics_process(_delta: float) -> void:
+	if dead :
+		return;
 	velocity = Vector2(0, 0);
 	velocity.x = Input.get_axis('character_left', 'character_right');
 	velocity.y = Input.get_axis('character_up', 'character_down');
@@ -57,7 +60,8 @@ func _on_health_updated(new_health: Variant) -> void:
 	$HealthBar.value = 100 - (new_health * 100. / max_health);
 
 	if health <= 0:
-		died.emit();
+		dead = true;
+		$AnimatedSprite2D.play('ko');
 
 
 func _on_collectible_detector_area_entered(_area: Area2D) -> void:
@@ -66,3 +70,8 @@ func _on_collectible_detector_area_entered(_area: Area2D) -> void:
 
 func _on_timer_timeout() -> void:
 	xp_obtained.emit(1);
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if dead:
+		died.emit();

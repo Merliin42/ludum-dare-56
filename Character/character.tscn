@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bjkyon2pmjvc1"]
+[gd_scene load_steps=35 format=3 uid="uid://bjkyon2pmjvc1"]
 
 [ext_resource type="Script" path="res://Character/character.gd" id="1_fn5m8"]
 [ext_resource type="Texture2D" uid="uid://b2g8dn0ejgyr0" path="res://Character/assets/animation/Papa_Taupe-1.png" id="2_m733v"]
@@ -6,19 +6,27 @@
 [ext_resource type="Texture2D" uid="uid://dm2sreb0b7vtu" path="res://Character/assets/animation/Papa_Taupe-3.png" id="4_4ue27"]
 [ext_resource type="AudioStream" uid="uid://bbovt7tfoa260" path="res://Character/assets/Bruitages - coup_3.mp3" id="4_nbbdi"]
 [ext_resource type="Texture2D" uid="uid://dfxjk6xs8o1up" path="res://Character/assets/animation/Papa_Taupe-4.png" id="5_tmiww"]
+[ext_resource type="Texture2D" uid="uid://bqg70th3wthsb" path="res://Character/assets/Papa ko/Papa_KO-1.png" id="6_2k2cn"]
 [ext_resource type="Texture2D" uid="uid://tp6e6l4pprtm" path="res://Character/assets/healthbar/Intérieur.png" id="6_n0hie"]
 [ext_resource type="Texture2D" uid="uid://b74a6125qgjpv" path="res://Character/assets/marche/Papa_Taupe_Marche-1.png" id="6_ycua5"]
 [ext_resource type="Texture2D" uid="uid://bpfvqnci8ust5" path="res://Character/assets/marche/Papa_Taupe_Marche-2.png" id="7_dcbon"]
+[ext_resource type="Texture2D" uid="uid://cxwjujm6fd0h8" path="res://Character/assets/Papa ko/Papa_KO-2.png" id="7_k503c"]
 [ext_resource type="Texture2D" uid="uid://x4qjc35rk6fh" path="res://Character/assets/healthbar/Jauche-1.png" id="7_srreq"]
 [ext_resource type="Texture2D" uid="uid://s4egmbyglvox" path="res://Character/assets/marche/Papa_Taupe_Marche-3.png" id="8_0utnb"]
+[ext_resource type="Texture2D" uid="uid://cmjwv3oenv8h4" path="res://Character/assets/Papa ko/Papa_KO-3.png" id="8_1y8iw"]
 [ext_resource type="Texture2D" uid="uid://5qsdosfvpt5b" path="res://Character/assets/healthbar/Jauche-2.png" id="8_vyukr"]
 [ext_resource type="Texture2D" uid="uid://c32nnnxbowyr" path="res://Character/assets/marche/Papa_Taupe_Marche-4.png" id="9_fdfru"]
 [ext_resource type="Texture2D" uid="uid://7av7awve2ei7" path="res://Character/assets/healthbar/Jauche-3.png" id="9_ghw0t"]
+[ext_resource type="Texture2D" uid="uid://8cec8ruv70ix" path="res://Character/assets/Papa ko/Papa_KO-4.png" id="9_j5o3e"]
 [ext_resource type="Texture2D" uid="uid://bug13t3o5wul6" path="res://Character/assets/marche/Papa_Taupe_Marche-5.png" id="10_7n0ds"]
+[ext_resource type="Texture2D" uid="uid://5gtc2wm7h3nd" path="res://Character/assets/Papa ko/Papa_KO-5.png" id="10_jowr5"]
 [ext_resource type="Texture2D" uid="uid://cggrueai0qoal" path="res://Character/assets/healthbar/Amour.png" id="10_pk1t6"]
 [ext_resource type="Texture2D" uid="uid://dj4b6x7xr3u6y" path="res://Character/assets/marche/Papa_Taupe_Marche-6.png" id="11_bp48x"]
+[ext_resource type="Texture2D" uid="uid://c0emfptbjtf4s" path="res://Character/assets/Papa ko/Papa_KO-6.png" id="11_wx4lk"]
+[ext_resource type="Texture2D" uid="uid://br6owehem7e81" path="res://Character/assets/Papa ko/Papa_KO-7.png" id="12_3qi8a"]
 [ext_resource type="Texture2D" uid="uid://cupn6bw3sqmer" path="res://Character/assets/marche/Papa_Taupe_Marche-7.png" id="12_vwtls"]
 [ext_resource type="Texture2D" uid="uid://cyk5ycr12qu1g" path="res://Character/assets/marche/Papa_Taupe_Marche-8.png" id="13_57b2o"]
+[ext_resource type="Texture2D" uid="uid://dpruqm0yscjkb" path="res://Character/assets/Papa ko/Papa_KO-8.png" id="13_v5p0d"]
 [ext_resource type="PackedScene" uid="uid://boroei22ds22n" path="res://Attacks/caress/caress.tscn" id="20_irctv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blfja"]
@@ -38,6 +46,35 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2k2cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k503c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1y8iw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j5o3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jowr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wx4lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3qi8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_v5p0d")
+}],
+"loop": false,
+"name": &"ko",
 "speed": 12.0
 }, {
 "frames": [{
@@ -130,8 +167,10 @@ speed = 300
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_blfja")
+animation = &"ko"
 autoplay = "default"
-frame_progress = 0.610362
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0suh2")
@@ -191,6 +230,7 @@ one_shot = true
 [node name="Caress" parent="Attacks" instance=ExtResource("20_irctv")]
 
 [connection signal="health_updated" from="." to="." method="_on_health_updated"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
 [connection signal="area_entered" from="CollectibleDetector" to="." method="_on_collectible_detector_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

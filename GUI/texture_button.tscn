@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4cc5w6251o7q"]
+
+[ext_resource type="Texture2D" uid="uid://cjety8lojws1p" path="res://launchscreen/assets/play/Play-1.png" id="1_g6koo"]
+[ext_resource type="Texture2D" uid="uid://tjkth3sua5yc" path="res://launchscreen/assets/play/Play-2.png" id="2_cc4p8"]
+[ext_resource type="Texture2D" uid="uid://br6ttb0v36ul8" path="res://launchscreen/assets/play/Play-3.png" id="3_fir2j"]
+[ext_resource type="Texture2D" uid="uid://4bpsanfsl0v0" path="res://launchscreen/assets/play_pressed/Press_-2.png" id="4_g7p08"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_rxotd"]
+frames = 3
+speed_scale = 8.0
+frame_0/texture = ExtResource("1_g6koo")
+frame_1/texture = ExtResource("2_cc4p8")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_fir2j")
+frame_2/duration = 1.0
+
+[node name="TextureButton" type="TextureButton"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -193.0
+offset_right = 351.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = SubResource("AnimatedTexture_rxotd")
+texture_pressed = ExtResource("4_g7p08")
+metadata/_edit_use_anchors_ = true

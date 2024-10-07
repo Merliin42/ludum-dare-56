@@ -1,20 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://qo4rosjkbvr5"]
+[gd_scene load_steps=4 format=3 uid="uid://qo4rosjkbvr5"]
 
 [ext_resource type="Script" path="res://launchscreen/lanchscreen.gd" id="1_d0klt"]
 [ext_resource type="Texture2D" uid="uid://bqaq7hbqrqmpd" path="res://launchscreen/assets/Accueil_.png" id="1_fomi3"]
-[ext_resource type="Texture2D" uid="uid://cjety8lojws1p" path="res://launchscreen/assets/play/Play-1.png" id="2_bld1i"]
-[ext_resource type="Texture2D" uid="uid://tjkth3sua5yc" path="res://launchscreen/assets/play/Play-2.png" id="3_k7ujg"]
-[ext_resource type="Texture2D" uid="uid://br6ttb0v36ul8" path="res://launchscreen/assets/play/Play-3.png" id="4_p54k6"]
-[ext_resource type="Texture2D" uid="uid://4bpsanfsl0v0" path="res://launchscreen/assets/play_pressed/Press_-2.png" id="7_m3wvc"]
-
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_rxotd"]
-frames = 3
-speed_scale = 8.0
-frame_0/texture = ExtResource("2_bld1i")
-frame_1/texture = ExtResource("3_k7ujg")
-frame_1/duration = 1.0
-frame_2/texture = ExtResource("4_p54k6")
-frame_2/duration = 1.0
+[ext_resource type="PackedScene" uid="uid://d4cc5w6251o7q" path="res://GUI/texture_button.tscn" id="3_17ggb"]
 
 [node name="Lanchscreen" type="CanvasLayer"]
 script = ExtResource("1_d0klt")
@@ -27,22 +15,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_fomi3")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 17.0
-offset_top = -193.0
-offset_right = 351.0
-offset_bottom = 92.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture_normal = SubResource("AnimatedTexture_rxotd")
-texture_pressed = ExtResource("7_m3wvc")
-metadata/_edit_use_anchors_ = true
+[node name="TextureButton" parent="." instance=ExtResource("3_17ggb")]
+offset_left = -16.0
+offset_top = -188.0
+offset_right = 318.0
+offset_bottom = 97.0
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6a3nviukob1n"]
+
+[ext_resource type="Script" path="res://scorescreen/score_screen.gd" id="1_k7pft"]
+[ext_resource type="Texture2D" uid="uid://d2scnh40gf3ht" path="res://scorescreen/Fin.png" id="1_ni55l"]
+[ext_resource type="PackedScene" uid="uid://d4cc5w6251o7q" path="res://GUI/texture_button.tscn" id="3_cf6ym"]
+
+[node name="ScoreScreen" type="CanvasLayer"]
+script = ExtResource("1_k7pft")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ni55l")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 632.0
+offset_top = 760.0
+offset_right = 1221.0
+offset_bottom = 899.0
+theme_override_colors/font_color = Color(0.984314, 0.929412, 0.831373, 1)
+theme_override_font_sizes/font_size = 55
+text = "Congratulations, you won !
+Here's your score :"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 848.0
+offset_top = 920.0
+offset_right = 995.0
+offset_bottom = 991.0
+theme_override_colors/font_color = Color(0.984314, 0.929412, 0.831373, 1)
+theme_override_font_sizes/font_size = 55
+text = "00:00"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" parent="." instance=ExtResource("3_cf6ym")]
+offset_left = 544.0
+offset_top = -492.0
+offset_right = 878.0
+offset_bottom = -207.0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
