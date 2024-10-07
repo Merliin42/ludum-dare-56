@@ -1,8 +1,7 @@
 extends Attack 
 
 func _on_timer_timeout() -> void:
-	var mobPos :Vector2 = $ClosestMobDetector.get_closest_mob_position();
-	var angle = mobPos.angle_to(Vector2(0, 1));
+	var angle = randf_range(0, TAU);
 	rotation = -angle;
 	$AnimationPlayer.play('launch');
 
