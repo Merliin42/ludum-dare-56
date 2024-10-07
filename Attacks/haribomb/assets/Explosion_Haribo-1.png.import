@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8vxwiw3p1ro4"
-path="res://.godot/imported/Caresse-6.png-75dd40ac15131b8c7a1ae28c66d69bf5.ctex"
+uid="uid://bhhyvpocswig2"
+path="res://.godot/imported/Explosion_Haribo-1.png-65b0b4b35e30935440d7c0f2105b9b58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Attacks/punch/animation/Caresse-6.png"
-dest_files=["res://.godot/imported/Caresse-6.png-75dd40ac15131b8c7a1ae28c66d69bf5.ctex"]
+source_file="res://Attacks/haribomb/assets/Explosion_Haribo-1.png"
+dest_files=["res://.godot/imported/Explosion_Haribo-1.png-65b0b4b35e30935440d7c0f2105b9b58.ctex"]
 
 [params]
 

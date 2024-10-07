@@ -20,24 +20,6 @@ var attacks_description: Array = [
 		'icon' = 'res://icon.png',
 	},
 	{
-		'id' = 'blanket',
-		'title' = 'Blanket Spin',
-		'description' = 'Warm them up!',
-		'icon' = 'res://icon.png',
-	},
-	{
-		'id' = 'snack_time',
-		'title' = 'IT\'S SNACK TIME',
-		'description' = 'Throwing cookies did never hurt anyone...',
-		'icon' = 'res://icon.png',
-	},
-	{
-		'id' = 'showtime',
-		'title' = 'Showtime!',
-		'description' = 'Inland Empire : Show them your vast, oceanic soul',
-		'icon' = 'res://icon.png',
-	},
-	{
 		'id' = 'uforeo',
 		'title' = 'U.F.Oreo',
 		'description' = 'Want a snack?',

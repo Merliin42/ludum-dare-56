@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjx7yvf6l0gok"
-path="res://.godot/imported/Caresse-8.png-56aefefdf1bfc1e51a1ecb951d09fe6b.ctex"
+uid="uid://k5t0ms7rhshr"
+path="res://.godot/imported/The_Holy_Hand_Cookie_-3.png-7a136b9db88c46967783eeb83c2e29af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Attacks/punch/animation/Caresse-8.png"
-dest_files=["res://.godot/imported/Caresse-8.png-56aefefdf1bfc1e51a1ecb951d09fe6b.ctex"]
+source_file="res://Attacks/handcookie/assets/The_Holy_Hand_Cookie_-3.png"
+dest_files=["res://.godot/imported/The_Holy_Hand_Cookie_-3.png-7a136b9db88c46967783eeb83c2e29af.ctex"]
 
 [params]
 

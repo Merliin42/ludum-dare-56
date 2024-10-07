@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhhyvpocswig2"
-path="res://.godot/imported/Explosion_Haribo-1.png-3c114811038b58d7af532453df208b18.ctex"
+uid="uid://dhhwqi81jmyrd"
+path="res://.godot/imported/The_Holy_Hand_Cookie_-1.png-a02089571c0e2225ac15fccce81e017a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Attacks/haribomb/Explosion_Haribo-1.png"
-dest_files=["res://.godot/imported/Explosion_Haribo-1.png-3c114811038b58d7af532453df208b18.ctex"]
+source_file="res://Attacks/handcookie/assets/The_Holy_Hand_Cookie_-1.png"
+dest_files=["res://.godot/imported/The_Holy_Hand_Cookie_-1.png-a02089571c0e2225ac15fccce81e017a.ctex"]
 
 [params]
 

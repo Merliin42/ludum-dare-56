@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2clxslppireb"
-path="res://.godot/imported/Haribombe-1.png-20afffc5eb0989f3b0916b81913af41f.ctex"
+uid="uid://biciwyo26v04q"
+path="res://.godot/imported/Uforeo-1.png-0ed2bbaa7a869f0f7cd473e8c2d910bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Attacks/haribomb/Haribombe-1.png"
-dest_files=["res://.godot/imported/Haribombe-1.png-20afffc5eb0989f3b0916b81913af41f.ctex"]
+source_file="res://Attacks/uforeo/assets/Uforeo-1.png"
+dest_files=["res://.godot/imported/Uforeo-1.png-0ed2bbaa7a869f0f7cd473e8c2d910bd.ctex"]
 
 [params]
 

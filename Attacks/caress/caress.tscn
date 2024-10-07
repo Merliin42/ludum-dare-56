@@ -1,45 +1,45 @@
 [gd_scene load_steps=16 format=3 uid="uid://boroei22ds22n"]
 
-[ext_resource type="Script" path="res://Attacks/punch/punch.gd" id="1_gxs0n"]
-[ext_resource type="Texture2D" uid="uid://u7sbnoscx22j" path="res://Attacks/punch/animation/Caresse-1.png" id="2_oypkw"]
-[ext_resource type="Texture2D" uid="uid://bgy8n0acmtxj5" path="res://Attacks/punch/animation/Caresse-2.png" id="3_xjxde"]
-[ext_resource type="Texture2D" uid="uid://de7kuocx5ewrm" path="res://Attacks/punch/animation/Caresse-3.png" id="4_58y2u"]
-[ext_resource type="Texture2D" uid="uid://c1pw3kcjmhlu8" path="res://Attacks/punch/animation/Caresse-4.png" id="5_hcmd3"]
-[ext_resource type="Texture2D" uid="uid://brfbh4pt436kq" path="res://Attacks/punch/animation/Caresse-5.png" id="6_olekr"]
-[ext_resource type="Texture2D" uid="uid://b8vxwiw3p1ro4" path="res://Attacks/punch/animation/Caresse-6.png" id="7_2lrjf"]
-[ext_resource type="Texture2D" uid="uid://cc6s5tcortly7" path="res://Attacks/punch/animation/Caresse-7.png" id="8_c3n4o"]
-[ext_resource type="Texture2D" uid="uid://bjx7yvf6l0gok" path="res://Attacks/punch/animation/Caresse-8.png" id="9_ytwck"]
-[ext_resource type="Texture2D" uid="uid://c7jp4wegijdxs" path="res://Attacks/punch/animation/Caresse-9.png" id="10_gp273"]
+[ext_resource type="Script" path="res://Attacks/caress/caress.gd" id="1_ktq2l"]
+[ext_resource type="Texture2D" uid="uid://u7sbnoscx22j" path="res://Attacks/caress/animation/Caresse-1.png" id="2_cio0s"]
+[ext_resource type="Texture2D" uid="uid://bgy8n0acmtxj5" path="res://Attacks/caress/animation/Caresse-2.png" id="3_0mpid"]
+[ext_resource type="Texture2D" uid="uid://de7kuocx5ewrm" path="res://Attacks/caress/animation/Caresse-3.png" id="4_fb4f1"]
+[ext_resource type="Texture2D" uid="uid://c1pw3kcjmhlu8" path="res://Attacks/caress/animation/Caresse-4.png" id="5_f8bwl"]
+[ext_resource type="Texture2D" uid="uid://brfbh4pt436kq" path="res://Attacks/caress/animation/Caresse-5.png" id="6_kljsw"]
+[ext_resource type="Texture2D" uid="uid://b8vxwiw3p1ro4" path="res://Attacks/caress/animation/Caresse-6.png" id="7_eopxm"]
+[ext_resource type="Texture2D" uid="uid://cc6s5tcortly7" path="res://Attacks/caress/animation/Caresse-7.png" id="8_ip7wg"]
+[ext_resource type="Texture2D" uid="uid://bjx7yvf6l0gok" path="res://Attacks/caress/animation/Caresse-8.png" id="9_lp83v"]
+[ext_resource type="Texture2D" uid="uid://c7jp4wegijdxs" path="res://Attacks/caress/animation/Caresse-9.png" id="10_5rxko"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ar4jq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_oypkw")
+"texture": ExtResource("2_cio0s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_xjxde")
+"texture": ExtResource("3_0mpid")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_58y2u")
+"texture": ExtResource("4_fb4f1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_hcmd3")
+"texture": ExtResource("5_f8bwl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_olekr")
+"texture": ExtResource("6_kljsw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_2lrjf")
+"texture": ExtResource("7_eopxm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_c3n4o")
+"texture": ExtResource("8_ip7wg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_ytwck")
+"texture": ExtResource("9_lp83v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_gp273")
+"texture": ExtResource("10_5rxko")
 }],
 "loop": false,
 "name": &"default",
@@ -206,11 +206,11 @@ _data = {
 "punch": SubResource("Animation_pdc6h")
 }
 
-[node name="Punch" type="Area2D"]
+[node name="Caress" type="Area2D"]
 collision_layer = 8
 collision_mask = 0
 monitoring = false
-script = ExtResource("1_gxs0n")
+script = ExtResource("1_ktq2l")
 damages = 10
 
 [node name="Left" type="AnimatedSprite2D" parent="."]

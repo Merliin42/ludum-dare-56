@@ -1,10 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://cx8di1mgurvkr"]
+[gd_scene load_steps=9 format=3 uid="uid://cx8di1mgurvkr"]
 
 [ext_resource type="Script" path="res://Attacks/uforeo/uforeo.gd" id="1_wqmho"]
-[ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="2_v30o0"]
+[ext_resource type="Texture2D" uid="uid://biciwyo26v04q" path="res://Attacks/uforeo/assets/Uforeo-1.png" id="2_8rarp"]
+[ext_resource type="Texture2D" uid="uid://cgrtxwv1wepoa" path="res://Attacks/uforeo/assets/Uforeo-2.png" id="3_1esqk"]
+[ext_resource type="Texture2D" uid="uid://7e0wirdxdn63" path="res://Attacks/uforeo/assets/Uforeo-3.png" id="4_dsp32"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcxfm"]
-size = Vector2(80, 80)
+[sub_resource type="SpriteFrames" id="SpriteFrames_lpl5l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8rarp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1esqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dsp32")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fq35e"]
+radius = 48.1445
 
 [sub_resource type="Animation" id="Animation_tydq1"]
 resource_name = "uforeo"
@@ -60,15 +79,16 @@ monitoring = false
 script = ExtResource("1_wqmho")
 damages = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.541176)
 position = Vector2(160, 0)
-scale = Vector2(1.25, 1.25)
-texture = ExtResource("2_v30o0")
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_lpl5l")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(160, 0)
-shape = SubResource("RectangleShape2D_tcxfm")
+shape = SubResource("CircleShape2D_fq35e")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

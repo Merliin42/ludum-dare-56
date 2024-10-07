@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de7kuocx5ewrm"
-path="res://.godot/imported/Caresse-3.png-243aededf0645e68eb83d605f016002d.ctex"
+uid="uid://cc6s5tcortly7"
+path="res://.godot/imported/Caresse-7.png-61ae4f0944fb9c90bb49ede95ddbbf22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Attacks/punch/animation/Caresse-3.png"
-dest_files=["res://.godot/imported/Caresse-3.png-243aededf0645e68eb83d605f016002d.ctex"]
+source_file="res://Attacks/caress/animation/Caresse-7.png"
+dest_files=["res://.godot/imported/Caresse-7.png-61ae4f0944fb9c90bb49ede95ddbbf22.ctex"]
 
 [params]
 

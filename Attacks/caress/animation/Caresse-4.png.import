@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1pw3kcjmhlu8"
-path="res://.godot/imported/Caresse-4.png-48670fc98c728b9543be69854d2506f4.ctex"
+path="res://.godot/imported/Caresse-4.png-e84ddb810362018ada1deb7902d3d8dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Attacks/punch/animation/Caresse-4.png"
-dest_files=["res://.godot/imported/Caresse-4.png-48670fc98c728b9543be69854d2506f4.ctex"]
+source_file="res://Attacks/caress/animation/Caresse-4.png"
+dest_files=["res://.godot/imported/Caresse-4.png-e84ddb810362018ada1deb7902d3d8dc.ctex"]
 
 [params]
 
