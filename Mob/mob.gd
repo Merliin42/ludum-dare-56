@@ -47,4 +47,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		get_parent().add_child(xp_instance);
 		queue_free();
 
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	$Timer.start();
 
+func _on_timer_timeout() -> void:
+	queue_free();

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bjkyon2pmjvc1"]
+[gd_scene load_steps=27 format=3 uid="uid://bjkyon2pmjvc1"]
 
 [ext_resource type="Script" path="res://Character/character.gd" id="1_fn5m8"]
 [ext_resource type="Texture2D" uid="uid://b2g8dn0ejgyr0" path="res://Character/assets/animation/Papa_Taupe-1.png" id="2_m733v"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://dj4b6x7xr3u6y" path="res://Character/assets/marche/Papa_Taupe_Marche-6.png" id="11_bp48x"]
 [ext_resource type="Texture2D" uid="uid://cupn6bw3sqmer" path="res://Character/assets/marche/Papa_Taupe_Marche-7.png" id="12_vwtls"]
 [ext_resource type="Texture2D" uid="uid://cyk5ycr12qu1g" path="res://Character/assets/marche/Papa_Taupe_Marche-8.png" id="13_57b2o"]
-[ext_resource type="PackedScene" uid="uid://c3akih54wq84w" path="res://Character/closest_mob_detector.tscn" id="14_np1k7"]
 [ext_resource type="PackedScene" uid="uid://ce5u5xnivlalg" path="res://Attacks/haribomb/haribomb.tscn" id="21_c4xon"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blfja"]
@@ -123,7 +122,7 @@ frame_2/duration = 1.0
 [node name="Character" type="CharacterBody2D"]
 z_index = 1
 position = Vector2(960, 539)
-collision_mask = 0
+collision_mask = 16
 motion_mode = 1
 script = ExtResource("1_fn5m8")
 speed = 300
