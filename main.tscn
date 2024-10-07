@@ -29,6 +29,7 @@ script = ExtResource("1_55rge")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="XPBar" type="ProgressBar" parent="CanvasLayer"]
+visible = false
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 27.0
@@ -42,7 +43,6 @@ show_percentage = false
 process_mode = 1
 
 [node name="TileMapLayer" parent="World" instance=ExtResource("4_f404e")]
-visible = false
 
 [node name="MobSpawner" parent="World" instance=ExtResource("1_5wj2p")]
 mobs = Array[PackedScene]([ExtResource("2_a3thj")])

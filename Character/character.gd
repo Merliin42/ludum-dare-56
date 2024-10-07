@@ -23,7 +23,12 @@ func _physics_process(_delta: float) -> void:
 		$AnimatedSprite2D.flip_h = false;
 	elif velocity.x > 0:
 		$AnimatedSprite2D.flip_h = true;
-
+	
+	if velocity != Vector2.ZERO:
+		$AnimatedSprite2D.play('walk');
+	else:
+		$AnimatedSprite2D.play('default');
+	
 	move_and_slide()
 
 func take_damage(amount: int) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2e1yu83rq4jl"]
+[gd_scene load_steps=20 format=3 uid="uid://b2e1yu83rq4jl"]
 
 [ext_resource type="Script" path="res://Mob/mob.gd" id="1_0rrqq"]
 [ext_resource type="Texture2D" uid="uid://bn8c4vbefi47l" path="res://Mob/assets/animation/Bébé_Taupe-1.png" id="2_pcoqj"]
@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://y2y4q0y2snim" path="res://Mob/assets/animation/Bébé_Taupe-3.png" id="4_0sjm3"]
 [ext_resource type="Texture2D" uid="uid://dwha66asnvp31" path="res://Mob/assets/animation/Bébé_Taupe-4.png" id="5_tgsgf"]
 [ext_resource type="Texture2D" uid="uid://b4aikuh1b0tpf" path="res://Mob/assets/animation/Bébé_Taupe-5.png" id="6_pte6f"]
+[ext_resource type="Texture2D" uid="uid://j87mrlws3aj0" path="res://Mob/assets/explosion/Taupe_Coeur-1.png" id="7_8x2x2"]
+[ext_resource type="Texture2D" uid="uid://bekqkpi43n5qp" path="res://Mob/assets/explosion/Taupe_Coeur-2.png" id="8_qkcmm"]
+[ext_resource type="Texture2D" uid="uid://bvpl10efdfws5" path="res://Mob/assets/explosion/Taupe_Coeur-3.png" id="9_1woyy"]
+[ext_resource type="Texture2D" uid="uid://2pbsuxrdxaak" path="res://Mob/assets/explosion/Taupe_Coeur-4.png" id="10_jhl8u"]
+[ext_resource type="Texture2D" uid="uid://cfxls3xu2bkkd" path="res://Mob/assets/explosion/Taupe_Coeur-5.png" id="11_8fk3v"]
+[ext_resource type="Texture2D" uid="uid://ciy0e8m5ep3aa" path="res://Mob/assets/explosion/Taupe_Coeur-6.png" id="12_tfqwr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_65ryl"]
 animations = [{
@@ -28,6 +34,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8x2x2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qkcmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1woyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jhl8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_8fk3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tfqwr")
+}],
+"loop": false,
+"name": &"explosion",
 "speed": 12.0
 }]
 
@@ -85,7 +114,6 @@ position = Vector2(5, 6)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_65ryl")
 autoplay = "default"
-frame_progress = 0.044606
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wpxjb")
@@ -106,5 +134,6 @@ libraries = {
 stream = ExtResource("3_k5t53")
 volume_db = 10.0
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="DamageDetector" to="." method="_on_damage_detector_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
