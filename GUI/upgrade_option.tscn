@@ -3,52 +3,29 @@
 [ext_resource type="Script" path="res://GUI/upgrade_option.gd" id="1_ugrqv"]
 [ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="1_wbsrk"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_6su3h"]
-font_size = 21
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg6aq"]
+bg_color = Color(0.764706, 0.666667, 0.266667, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.290196, 0.133333, 0.0196078, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [node name="UpgradeOption" type="Button"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = -1.0
+offset_right = 292.0
+offset_bottom = 71.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_wg6aq")
+text = "Lorem Ipsum Dolores Sit Amet
+Lorem Ipsum Dolores Sit Amet"
+icon = ExtResource("1_wbsrk")
+alignment = 0
+expand_icon = true
 script = ExtResource("1_ugrqv")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Icon" type="TextureRect" parent="MarginContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-texture = ExtResource("1_wbsrk")
-stretch_mode = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Lorem Ipsum Dolores Sit Amet"
-label_settings = SubResource("LabelSettings_6su3h")
-
-[node name="Description" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Lorem Ipsum Dolores Sit Amet"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

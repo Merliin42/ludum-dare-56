@@ -31,6 +31,10 @@ func _physics_process(_delta: float) -> void:
 	
 	move_and_slide()
 
+func add_attack(ref: String) -> void:
+	var attack = load(ref).instantiate();
+	$Attacks.add_child(attack);
+
 func take_damage(amount: int) -> void:
 	$DamagePlayer.play();
 	if i_frame && i_frame_enable:

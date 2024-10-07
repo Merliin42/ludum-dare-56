@@ -15,7 +15,7 @@ func _ready() -> void:
 			upgrade_option_instanced.title = attack.title;
 			upgrade_option_instanced.description = attack.description;
 			upgrade_option_instanced.icon_path = attack.icon;
-			upgrade_option_instanced.id = attack.id;
+			upgrade_option_instanced.ref = attack.ref;
 			upgrade_option_instanced.has_been_pressed.connect(_on_button_clicked);
 			$VBoxContainer.add_child(upgrade_option_instanced);
 
