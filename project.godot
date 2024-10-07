@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Ludum Dare 56"
-run/main_scene="res://main.tscn"
+config/name="Taupattack"
+run/main_scene="res://launchscreen/lanchscreen.tscn"
 config/features=PackedStringArray("4.3")
+boot_splash/image="res://launchscreen/Accueil_.png"
 config/icon="res://icon.png"
 
 [display]

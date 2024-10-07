@@ -139,12 +139,9 @@ shape = SubResource("CircleShape2D_0suh2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="ClosestMobDetector" parent="." instance=ExtResource("14_np1k7")]
-
 [node name="MobDetector" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
-monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MobDetector"]
