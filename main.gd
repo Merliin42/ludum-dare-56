@@ -4,7 +4,9 @@ extends Node
 
 var level_up_menu := preload('res://GUI/level_up_menu.tscn');
 var player_xp = 0;
-var next_level = 1;
+var previous_increment = 0;
+var increment = 1;
+var next_level = 5;
 
 func _on_character_died() -> void:
 	get_tree().change_scene_to_file('res://launchscreen/lanchscreen.tscn');
@@ -19,4 +21,7 @@ func _on_character_xp_obtained(amount: Variant) -> void:
 
 	
 func _on_upgrade_choosed(value: String):
+	next_level += increment;
+	increment += previous_increment;
+	player_xp = 0;	
 	$World/Character.add_attack(value);
