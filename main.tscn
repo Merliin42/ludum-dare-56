@@ -38,6 +38,15 @@ theme_override_styles/background = SubResource("StyleBoxFlat_oqqqs")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5roxr")
 show_percentage = false
 
+[node name="Clock" type="Label" parent="CanvasLayer"]
+offset_left = 14.0
+offset_top = 38.0
+offset_right = 54.0
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 60
+text = "00:00"
+metadata/_edit_use_anchors_ = true
+
 [node name="World" type="Node" parent="."]
 process_mode = 1
 
@@ -49,5 +58,9 @@ mobs = Array[PackedScene]([ExtResource("2_a3thj")])
 
 [node name="Character" parent="World" instance=ExtResource("1_qqap8")]
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="died" from="World/Character" to="." method="_on_character_died"]
 [connection signal="xp_obtained" from="World/Character" to="." method="_on_character_xp_obtained"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

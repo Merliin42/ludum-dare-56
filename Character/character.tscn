@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dj4b6x7xr3u6y" path="res://Character/assets/marche/Papa_Taupe_Marche-6.png" id="11_bp48x"]
 [ext_resource type="Texture2D" uid="uid://cupn6bw3sqmer" path="res://Character/assets/marche/Papa_Taupe_Marche-7.png" id="12_vwtls"]
 [ext_resource type="Texture2D" uid="uid://cyk5ycr12qu1g" path="res://Character/assets/marche/Papa_Taupe_Marche-8.png" id="13_57b2o"]
-[ext_resource type="PackedScene" uid="uid://boroei22ds22n" path="res://Attacks/caress/caress.tscn" id="20_irctv"]
+[ext_resource type="PackedScene" uid="uid://ce5u5xnivlalg" path="res://Attacks/haribomb/haribomb.tscn" id="20_1hkft"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_blfja"]
 animations = [{
@@ -188,7 +188,7 @@ one_shot = true
 
 [node name="Attacks" type="Node2D" parent="."]
 
-[node name="Caress" parent="Attacks" instance=ExtResource("20_irctv")]
+[node name="Haribomb" parent="Attacks" instance=ExtResource("20_1hkft")]
 
 [connection signal="health_updated" from="." to="." method="_on_health_updated"]
 [connection signal="body_entered" from="MobDetector" to="." method="_on_mob_detector_body_entered"]
