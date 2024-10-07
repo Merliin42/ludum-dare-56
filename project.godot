@@ -13,7 +13,7 @@ config_version=5
 config/name="Taupattack"
 run/main_scene="res://launchscreen/lanchscreen.tscn"
 config/features=PackedStringArray("4.3")
-boot_splash/image="res://launchscreen/Accueil_.png"
+boot_splash/image="res://launchscreen/assets/Accueil_.png"
 config/icon="res://icon.png"
 
 [display]
