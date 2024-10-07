@@ -34,7 +34,7 @@ singletons=[]
 [gui]
 
 theme/custom="res://Generic/Assets/base_theme.tres"
-theme/custom_font="res://Generic/Assets/Segoe UI.ttf"
+theme/custom_font="res://Generic/Assets/Comfy Feeling.otf"
 common/drop_mouse_on_gui_input_disabled=true
 
 [input]
