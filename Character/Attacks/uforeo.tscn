@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cx8di1mgurvkr"]
 
-[ext_resource type="Script" path="res://Character/Attacks/uforeo/uforeo.gd" id="1_wqmho"]
+[ext_resource type="Script" path="res://Character/Attacks/uforeo.gd" id="1_wqmho"]
 [ext_resource type="Texture2D" uid="uid://bvcr1dcpqw76u" path="res://icon.png" id="2_v30o0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tcxfm"]
