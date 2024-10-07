@@ -15,7 +15,7 @@ var dead := false;
 func _physics_process(_delta: float) -> void:
 	var camera = get_viewport().get_camera_2d()
 
-	if camera:
+	if camera and not dead:
 		velocity = camera.global_position - self.global_position;
 		velocity = velocity.normalized() * speed;
 		move_and_slide();

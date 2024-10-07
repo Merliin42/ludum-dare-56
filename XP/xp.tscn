@@ -24,6 +24,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k4cxn"]
+radius = 16.0312
 
 [node name="XP" type="Area2D"]
 z_index = -1
